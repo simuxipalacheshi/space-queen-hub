@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>赏金女王 · 专注力与创造力的数字领地</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f7f9fc;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1e2a3a;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 760px;
+      width: 100%;
+      padding: 2rem 1.5rem 3.5rem;
+    }
+
+    /* 导航 */
+    .nav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0.6rem 0 2rem 0;
+      border-bottom: 1px solid #dce3ed;
+    }
+
+    .nav a {
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: #3a4a5e;
+      margin-left: 1.8rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      transition: color 0.15s;
+    }
+
+    .nav a:hover {
+      color: #c4453c;
+    }
+
+    .nav .brand {
+      margin-right: auto;
+      margin-left: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1e2a3a;
+      letter-spacing: 0.02em;
+    }
+
+    /* 主标题区 */
+    .hero {
+      margin: 3rem 0 2.5rem 0;
+    }
+
+    .hero h1 {
+      font-size: 2.3rem;
+      font-weight: 600;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: #0f1a2c;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: #3f4d60;
+      max-width: 600px;
+    }
+
+    /* 正文通用 */
+    p {
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+
+    a {
+      color: #c4453c;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.1s;
+    }
+
+    a:hover {
+      border-bottom-color: #c4453c;
+    }
+
+    /* 卡片式场景模块 */
+    .scene-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin: 2.8rem 0 2.8rem 0;
+    }
+
+    .scene-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.15s;
+    }
+
+    .scene-card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .scene-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #1a2637;
+      letter-spacing: -0.01em;
+    }
+
+    .scene-card .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      background: #edf0f5;
+      color: #3b4b62;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.02em;
+    }
+
+    .scene-card p {
+      margin-bottom: 0.4rem;
+      color: #2f3f52;
+      font-size: 0.96rem;
+    }
+
+    .scene-card .meta {
+      font-size: 0.85rem;
+      color: #6a7b8e;
+      margin-top: 0.6rem;
+    }
+
+    /* 常见说明块 */
+    .faq-block {
+      background: #f1f4f9;
+      padding: 1.8rem 2rem;
+      border-radius: 20px;
+      margin: 3rem 0 1.8rem 0;
+    }
+
+    .faq-block h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      color: #15202f;
+    }
+
+    .faq-item {
+      margin-bottom: 1.2rem;
+      border-bottom: 1px solid #dce3ed;
+      padding-bottom: 1rem;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .faq-item .q {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #1b293b;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item .a {
+      font-size: 0.9rem;
+      color: #44566b;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #dce3ed;
+      margin: 2rem 0 1.8rem 0;
+    }
+
+    .footer-note {
+      font-size: 0.85rem;
+      color: #6a7e93;
+      margin-top: 2.6rem;
+      text-align: center;
+      letter-spacing: 0.01em;
+    }
+
+    @media (max-width: 520px) {
+      .page {
+        padding: 1.5rem 1rem 2.8rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .scene-card {
+        padding: 1.3rem 1.2rem;
+      }
+      .faq-block {
+        padding: 1.3rem 1.2rem;
+      }
+      .nav a {
+        margin-left: 1rem;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 顶部导航 -->
+  <nav class="nav">
+    <span class="brand">✧ 赏金女王</span>
+    <a href="#intro">介绍</a>
+    <a href="#scenes">场景</a>
+    <a href="#faq">说明</a>
+  </nav>
+
+  <!-- hero -->
+  <section class="hero">
+    <h1>专注力、策略与创造力的数字领地</h1>
+    <p>赏金女王不是单一标签，而是一种持续探索的思维状态。在 <a href="https://space-queen.com">赏金女王</a> 的主题框架下，我们关注信息筛选、决策模型与节奏控制。</p>
+  </section>
+
+  <!-- 内容简介 -->
+  <section id="intro">
+    <p>平台围绕“赏金女王”这一核心概念，从多维线索展开：它既关乎在复杂环境中快速定位关键目标，也涉及资源分配与长期规划。内容体系偏向分析型与实用型，不依赖情绪化表达，而是以事实与逻辑作为基础。</p>
+    <p>无论是个人成长、任务管理还是认知工具，这里的内容都试图提供更清晰的框架。每个模块都经过提炼，避免冗余叙事，保持信息密度。</p>
+  </section>
+
+  <!-- 三个场景模块 -->
+  <div class="scene-grid" id="scenes">
+    <div class="scene-card">
+      <span class="tag">场景 · 信息筛选</span>
+      <h3>从噪声中提取信号</h3>
+      <p>面对海量输入，赏金女王倡导建立优先级原则：区分“重要但模糊”与“紧急但琐碎”。通过结构化清单、反向排除法，压缩决策时间。</p>
+      <div class="meta">适用：研究前期 / 选题评估 / 日常阅读</div>
+    </div>
+
+    <div class="scene-card">
+      <span class="tag">场景 · 策略推演</span>
+      <h3>设定可验证的假设</h3>
+      <p>无论是项目规划还是技能积累，使用“赏金女王”式推理：先定义边界条件，再模拟不同路径的产出比。避免空泛目标，强调执行节点与反馈周期。</p>
+      <div class="meta">适用：计划制定 / 资源分配 / 复盘迭代</div>
+    </div>
+
+    <div class="scene-card">
+      <span class="tag">场景 · 节奏管理</span>
+      <h3>精力分配与恢复</h3>
+      <p>持续产出依赖稳定的节奏，而非短期冲刺。赏金女王视角下，专注时长、间隔休息、任务切换成本都需要被量化。推荐将高认知负荷任务安排在精力峰值时段。</p>
+      <div class="meta">适用：日程设计 / 习惯养成 / 团队协作</div>
+    </div>
+  </div>
+
+  <!-- 常见说明／faq 摘要 -->
+  <div class="faq-block" id="faq">
+    <h2>常见说明</h2>
+
+    <div class="faq-item">
+      <div class="q">赏金女王是否指特定人物或角色？</div>
+      <div class="a">不指向虚构或现实个体，而是作为一种分析框架与方法论集合的代称。内容聚焦在思维工具与行为策略层面。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="q">内容适合哪些群体？</div>
+      <div class="a">适合对效率、认知科学、决策质量感兴趣的人。不预设专业背景，但要求阅读者具备基础逻辑与分析意愿。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="q">是否有固定的更新或发布节奏？</div>
+      <div class="a">内容以专题形式组织，不强调固定频率。每个专题独立成篇，可跨章节参考，无需按顺序阅读。</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <p>更多关于方法论与场景的深入讨论，可以在 <a href="https://space-queen.com">赏金女王</a> 的后续专题中找到。本站不提供投资建议或保证性承诺，所有内容仅供参考与研究。</p>
+
+  <div class="footer-note">
+    © 2025 · 内容持续整理中
+  </div>
+</div>
+</body>
+</html>
